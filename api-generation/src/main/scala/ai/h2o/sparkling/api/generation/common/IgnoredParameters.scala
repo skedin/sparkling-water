@@ -30,7 +30,6 @@ object IgnoredParameters {
     "calibration_frame", // GBM, DRF, XGBoost
     "max_hit_ratio_k", // GBM, DRF, Deep Learning
     "checkpoint", // GBM, DRF, XGBoost, Deep Learning
-    "interaction_pairs", // GLM
     "beta_constraints", // GLM
     "pretrained_autoencoder") // DeepLearning
 
