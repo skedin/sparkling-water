@@ -56,11 +56,10 @@ object Runner {
       ExplicitField("monotone_constraints", "HasMonotoneConstraints", new util.HashMap[String, Double]())
     val plugValues = ExplicitField("plug_values", "HasPlugValues", null)
     val userPoints = ExplicitField("user_points", "HasUserPoints", null)
-    val interactionPairs = ExplicitField("interaction_pairs", "HasInteractionPairs", null)
     val randomCols = ExplicitField("random_columns", "HasRandomCols", null)
 
     val xgboostFields = Seq(monotonicity, ignoredCols)
-    val glmFields = Seq(randomCols, ignoredCols, plugValues, interactionPairs)
+    val glmFields = Seq(randomCols, ignoredCols, plugValues)
     val kmeansFields = Seq(userPoints, ignoredCols)
 
     val deepLearningFields = Seq(
