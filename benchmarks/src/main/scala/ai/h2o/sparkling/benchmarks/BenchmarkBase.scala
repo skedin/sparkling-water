@@ -157,8 +157,8 @@ abstract class AlgorithmBenchmarkBase[TInput](context: BenchmarkContext, algorit
 object AlgorithmBenchmarkBase {
   val supportedAlgorithms: Seq[AlgorithmBundle] = {
     Seq(
-      AlgorithmBundle(new H2OGBM, ("GBM", Map.empty[String, String])),
-      AlgorithmBundle(new H2OGLM, ("GLM", Map.empty[String, String])))
+      AlgorithmBundle(new H2OGBM, ("gbm", Map.empty[String, String])),
+      AlgorithmBundle(new H2OGLM, ("glm", Map.empty[String, String])))
   }
 }
 
