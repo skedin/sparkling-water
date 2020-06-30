@@ -76,9 +76,8 @@ abstract class H2OAlgorithm[P <: Model.Parameters: ClassTag]
         }
         .getOrElse(Map())
     val modelId = trainAndGetDestinationKey(s"/3/ModelBuilders/${parameters.algoName().toLowerCase}", params)
-    H2OModel(modelId).toMOJOModel(
-      Identifiable.randomUID(parameters.algoName()),
-      H2OMOJOSettings.createFromModelParams(this))
+    H2OModel(modelId)
+      .toMOJOModel(Identifiable.randomUID(parameters.algoName()), H2OMOJOSettings.createFromModelParams(this))
   }
 
   private def convertModelIdToKey(): String = {
