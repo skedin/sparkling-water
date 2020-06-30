@@ -9,8 +9,13 @@ provider "aws" {
 
 data "aws_vpc" "main" {
   id = "${var.aws_vpc_id}"
+  filter {
+    name = "vpc-id"
+    values = [var.aws_vpc_id]
+  }
 }
 
 data "aws_subnet" "main" {
   id = "${var.aws_subnet_id}"
+  vpc_id = data.aws_vpc.main.id
 }

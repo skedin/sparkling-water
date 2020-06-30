@@ -11,8 +11,8 @@ provider "aws" {
 data "aws_vpc" "main" {
   id = var.aws_vpc_id
   filter {
-    name = "tag:Name"
-    values = ["SparklingWaterTestInfra"]
+    name = "vpc-id"
+    values = [var.aws_vpc_id]
   }
 }
 
