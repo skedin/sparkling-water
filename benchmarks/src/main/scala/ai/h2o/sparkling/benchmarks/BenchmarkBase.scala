@@ -150,7 +150,7 @@ abstract class AlgorithmBenchmarkBase[TInput](context: BenchmarkContext, algorit
   extends BenchmarkBase[TInput](context) {
 
   override protected def getResultHeader(): String = {
-    s"${super.getResultHeader()} and algorithm '${algorithm.h2oAlgorithm.getClass.getSimpleName}'"
+    s"${super.getResultHeader()} and algorithm '${algorithm.h2oAlgorithm._1}'"
   }
 }
 
