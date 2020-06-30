@@ -29,11 +29,6 @@ task copyTerraform(dependsOn: cleanTerraform) {
       include "**/*.tf"
       into "build/terraform"
     }
-    copy {
-      from '../templates/src/terraform/aws/modules'
-      include "emr_security/*.tf"
-      into "build/terraform/aws/modules"
-    }
   }
 }
 
