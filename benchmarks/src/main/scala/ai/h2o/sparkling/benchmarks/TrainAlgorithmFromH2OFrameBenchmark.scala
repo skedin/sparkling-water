@@ -28,6 +28,9 @@ class TrainAlgorithmFromH2OFrameBenchmark(context: BenchmarkContext, algorithmBu
 
   override protected def body(trainingFrame: H2OFrame): Unit = {
     val (name, params) = algorithmBundle.h2oAlgorithm
-    trainAndGetDestinationKey(s"/3/ModelBuilders/$name", params)
+    val newParams = params ++ Map(
+      "training_frame" -> trainingFrame.frameId,
+      "response_column" -> context.datasetDetails.labelCol)
+    trainAndGetDestinationKey(s"/3/ModelBuilders/$name", newParams)
   }
 }
