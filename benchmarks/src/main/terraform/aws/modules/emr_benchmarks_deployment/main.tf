@@ -91,7 +91,7 @@ EOF
 }
 
 resource "aws_s3_bucket_object" "run_benchmarks_script" {
-  bucket = "${aws_s3_bucket.deployment_bucket.id}"
+  bucket = aws_s3_bucket.deployment_bucket.id
   key    = "run_benchmarks.sh"
   acl = "private"
   content = <<EOF

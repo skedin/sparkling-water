@@ -18,7 +18,7 @@ resource "aws_security_group" "master" {
       "0.0.0.0/0"]
   }
   depends_on = [
-    "data.aws_subnet.main"]
+    data.aws_subnet.main]
 }
 
 resource "aws_security_group" "slave" {
@@ -41,5 +41,5 @@ resource "aws_security_group" "slave" {
       "0.0.0.0/0"]
   }
   depends_on = [
-    "data.aws_subnet.main"]
+    data.aws_subnet.main]
 }
