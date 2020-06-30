@@ -18,10 +18,7 @@ data "aws_vpc" "main" {
 
 data "aws_subnet" "main" {
   id = var.aws_subnet_id
-  filter {
-    name = "tag:Name"
-    values = ["SparklingWaterTestInfra"]
-  }
+  vpc_id = data.aws_vpc.main.id
 }
 
 resource "aws_key_pair" "key" {

@@ -17,4 +17,5 @@ data "aws_vpc" "main" {
 
 data "aws_subnet" "main" {
   id = var.aws_subnet_id
+  vpc_id = data.aws_vpc.main.id
 }
